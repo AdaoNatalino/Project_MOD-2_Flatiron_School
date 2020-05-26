@@ -1,0 +1,13 @@
+<h1>All Cults</h1>
+
+<div>
+<ul>
+<% @cults.each do |cult| %>
+
+<li>
+    <%= link_to "#{cult.name}", cult%>
+</li>
+
+<% end %>
+</ul>
+</div>

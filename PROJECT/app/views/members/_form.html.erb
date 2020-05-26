@@ -1,0 +1,18 @@
+<% if @member.errors.full_messages.length > 0 %>
+  <h2><%= pluralize(@member.errors.full_messages.length , "error") %> prohibited this member from being created:</h2>
+  <ul>
+    <% @member.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@member) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :date_of_birth %>
+  <%= f.date_field :date_of_birth %><br>
+
+  <%= f.submit %>
+<% end %>

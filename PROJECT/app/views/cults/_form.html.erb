@@ -1,0 +1,21 @@
+<% if @cult.errors.full_messages.length > 0 %>
+  <h2><%= pluralize(@cult.errors.full_messages.length , "error") %> prohibited this cult from being created:</h2>
+  <ul>
+    <% @cult.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@cult) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :slogan %>
+  <%= f.text_field :slogan %><br>
+
+  <%= f.label :building_name %>
+  <%= f.text_field :building_name %><br>
+
+  <%= f.submit %>
+<% end %>

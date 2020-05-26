@@ -111,7 +111,7 @@ end
     member = cult.members.sample
 
     Attendance.create(
-        member: member
+        member: member,
         meeting: meeting
     )
 end

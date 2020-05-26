@@ -4,5 +4,8 @@ class Cult < ApplicationRecord
     has_many :buildings
     has_many :locations, through: :buildings
     has_many :meetings, through: :buildings
+
+    validates :name, uniqueness: true
+    validates :slogan, presence: true
     
 end

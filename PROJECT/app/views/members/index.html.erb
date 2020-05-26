@@ -1,0 +1,13 @@
+<h1>All Members</h1>
+
+<div>
+<ul>
+<% @members.each do |member| %>
+
+<li>
+    <%= link_to "#{member.name}", member%>
+</li>
+
+<% end %>
+</ul>
+</div>

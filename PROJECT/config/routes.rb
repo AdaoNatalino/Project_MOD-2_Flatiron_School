@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :attendances
   resources :cults
   resources :meetings
+
+  #get '/', to: 'cults#start'
 end

@@ -5,7 +5,6 @@ class Building < ApplicationRecord
 
     validate :unique_per_location
 
-
     def unique_per_location
         if self.location.cults.any?{ |cult| cult == self.cult}
             self.errors[:base] << "A location can only have one building per cult"
