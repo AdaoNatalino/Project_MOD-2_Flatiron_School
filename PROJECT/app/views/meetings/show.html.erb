@@ -1,0 +1,10 @@
+<%= flash[:message] %>
+<h1><%= "#{@meeting.building.name} #{@meeting.date}" %></h1>
+<h3>Attendees</h3>
+<ul>
+<% @meeting.members.each do |member| %>
+  <li><%= link_to member.name, member %></li>
+<% end %>
+</ul>
+
+<%= button_to  "Delete ♥", meeting_path(@meeting), method: :delete, data: {confirm: "Are you sure?" } %>

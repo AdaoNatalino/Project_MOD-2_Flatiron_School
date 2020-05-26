@@ -35,7 +35,7 @@
 <h4>Meetings</h4>
 <ul>
 <% @cult.meetings.each do |meeting| %>
-  <li> <%= "#{meeting.building.name}, on: #{meeting.date}"%> </li>
+  <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
 <% end %>
 </ul>
 
