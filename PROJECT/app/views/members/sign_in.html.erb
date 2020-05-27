@@ -1,0 +1,21 @@
+<h1>Sign In</h1>
+
+<% if flash[:errors] %>
+<ul>
+  <% for error in flash[:errors] %>
+    <li style="color: red;"><%= error %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%# <% form_for :thing, :url => {:action => "get_in"} do |f| %> 
+
+<%= form_with model: Member.new, url: {action: "get_in"} do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.submit "Sign-in!"%>
+<% end %>

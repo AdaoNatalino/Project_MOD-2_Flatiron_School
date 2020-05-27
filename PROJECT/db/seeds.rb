@@ -39,14 +39,27 @@ Location.create(
 ]
 )
 
+10.times do 
+    
+    Location.create(
+         name: Faker::Nation.capital_city,
+         country: Faker::Address.country
+    )
+end
+
+
 Member.create(
     [{
-        name: "Jamie",
-        date_of_birth: Date.parse("1990-06-18")
+        name: "Jamie Symonds-Tayler",
+        date_of_birth: Date.parse("1990-06-18"),
+        username: "jamie",
+        password: "jamie"
     },
     {
-        name: "Adao",
-        date_of_birth: Date.parse("1989-08-06")
+        name: "Adao Natalino",
+        date_of_birth: Date.parse("1989-08-06"),
+        username: "adao",
+        password: "adao"
     },
 
 ]
@@ -54,24 +67,19 @@ Member.create(
 
 
 30.times do
+    name = Faker::Name.name
     Member.create(
         {
-            name: Faker::Name.name,
-            date_of_birth: Date.today-3650-rand(10000)
+            name: name,
+            date_of_birth: Date.today-3650-rand(10000),
+            username: name.split[0],
+            password: name.split[0]
         }
     )
 end
 
 
-10.times do 
-    loc = Location.all.sample
-    cult = Cult.all.sample
-    Building.create(
-         name: "#{loc.name} #{cult.building_name}",
-         location: loc,
-         cult: cult
-    )
-end
+
 
 
 10.times do 
@@ -82,6 +90,16 @@ end
     )
 end
 
+
+50.times do 
+    loc = Location.all.sample
+    cult = Cult.all.sample
+    Building.create(
+         name: "#{loc.name} #{cult.building_name}",
+         location: loc,
+         cult: cult
+    )
+end
 
 
 
@@ -95,7 +113,7 @@ end
 
 end
 
-10.times do 
+50.times do 
     building = Building.all.sample
     Meeting.create(
         building: building,
@@ -115,3 +133,5 @@ end
         meeting: meeting
     )
 end
+
+puts "Seed Complete"

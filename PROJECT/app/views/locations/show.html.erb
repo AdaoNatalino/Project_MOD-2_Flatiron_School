@@ -1,0 +1,10 @@
+<h1><%= @location.name %></h1>
+
+<h4>This City has this Cults: </h4>
+<ul>
+<% @location.cults.each do |cult| %>
+  <li><%= link_to  cult.name, cult %></li>
+<% end %>
+</ul>
+
+

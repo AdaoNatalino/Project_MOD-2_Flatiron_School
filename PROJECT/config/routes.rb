@@ -8,6 +8,15 @@ Rails.application.routes.draw do
   resources :attendances
   resources :cults
   resources :meetings
+  
+  get '/sign_in', to: 'members#sign_in', as: 'sign_in'
+  post '/get_in', to: 'members#get_in'
+  get '/sign_out', to: 'members#sign_out', as: 'sign_out'
+  get '/sign_up', to: 'members#sign_up', as: 'sign_up'
+
+  
+
+  post "/member/:id/join_cult", to: "oaths#join_cult", as: 'join_cult'
 
   #get '/', to: 'cults#start'
 end

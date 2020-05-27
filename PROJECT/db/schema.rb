@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_112154) do
+ActiveRecord::Schema.define(version: 2020_05_27_125951) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "meeting_id"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_112154) do
     t.date "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "username"
+    t.string "password_digest"
   end
 
   create_table "oaths", force: :cascade do |t|

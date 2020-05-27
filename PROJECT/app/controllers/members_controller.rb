@@ -2,6 +2,32 @@ class MembersController < ApplicationController
 
     before_action :set_member, only: [:show, :edit, :update]
 
+
+    def get_in
+        @member = Member.find_by(username: params[:member][:username])
+        if @member
+            if @member.authenticate(params[:member][:password])
+                session[:user_id] = @member.id
+                redirect_to @member
+            else
+                flash[:errors] =["Password didn't match"]
+                redirect_to sign_in_path
+            end
+        else
+            flash[:errors] =["Unable to find user with these credentials"]
+            redirect_to sign_in_path
+        end
+        #byebug
+    end
+
+    def sign_in
+    end
+
+    def sign_out
+        session[:user_id] = nil
+        redirect_to sign_in_path
+    end
+
     def show
     end
     

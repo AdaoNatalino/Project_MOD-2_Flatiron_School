@@ -1,5 +1,14 @@
 <h1><%= @cult.name %></h1>
 <h3><%= @cult.slogan %></h3>
+<% if @cult.members.any?{|member| member == @user}%>
+  <%= render partial: "member" %>
+<% else %>
+  <%= render partial: "notmember" %>
+<%end%>
+
+
+
+<!--
 <%= link_to  "Edit", edit_cult_path(@cult.id) %>
 <%= button_to 'Delete Cult ♥', @cult, method: :delete, data: { confirm: 'Are you sure?' } %><br>
 
@@ -24,12 +33,7 @@
 </ul>
 
 
-<h4>Locations</h4>
-<ul>
-<% @cult.locations.each do |location| %>
-  <li> <%= link_to location.name, location %> </li>
-<% end %>
-</ul>
+
 
 
 <h4>Meetings</h4>
@@ -38,5 +42,5 @@
   <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
 <% end %>
 </ul>
-
+-->
 

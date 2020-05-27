@@ -2,22 +2,31 @@
 <h3><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h3>
 
 <%if @member.cults.any?%>
-<h3>Member of:</h3>
-<ul>
-  <% @member.oaths.each do |oath| %>
-    <li><%= link_to  oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
-  <% end %>
-</ul>
-
-<ul>
-  <% @member.attendances.each do |attendance| %>
-    <li><%= link_to  oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
-  <% end %>
-</ul>
-
-
-<%else%>
-<%= "This person isn't in any cults!"%>
+    <h3>Member of:</h3>
+    <ul>
+      <% @member.oaths.each do |oath| %>
+        <li><%= link_to  oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
+      <% end %>
+    </ul>
+  <%if @member.meetings.any? %>
+    <h3>This person attended these meetings:</h3>
+    <ul>
+      <% @member.attendances.each do |attendance| %>
+        <li><%= link_to attendance.meeting.date, attendance.meeting%> Cult: <%= link_to  attendance.meeting.cult.name, attendance.meeting.cult %> 
+      <% end %>
+    </ul>
+  <%else%>
+    <h3>This person hasn't attended any meetings</h3>
+  <%end%>
+  
+  <%else%>
+  <%= "This person isn't in any cults!"%>
 <% end %>
 
-<%= link_to  "Join a Cult", @member %>
+<% if @user == @member %>
+  <%= link_to "Join a Cult", new_oath_path %>  
+<% end %>
+
+
+
+

@@ -1,0 +1,18 @@
+<% if @oath.errors.full_messages.length > 0 %>
+  <h2><%= pluralize(@oath.errors.full_messages.length , "error") %> prohibited this oath from being created:</h2>
+  <ul>
+    <% @oath.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@oath) do |f| %>
+   
+  <%= f.label :cult %>
+  <%= f.collection_select(:cult_id, Cult.all, :id, :name, prompt: true) %><br>
+  
+  <br>
+
+  <%= f.submit %>
+<% end %>

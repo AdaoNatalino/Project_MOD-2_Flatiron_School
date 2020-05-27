@@ -5,6 +5,8 @@ class Oath < ApplicationRecord
     validate :unique_per_cult
     #before_save :unique_per_cult
 
+    accepts_nested_attributes_for :member
+
 
     def unique_per_cult
         if self.member.cults.any?{ |cult| cult == self.cult}

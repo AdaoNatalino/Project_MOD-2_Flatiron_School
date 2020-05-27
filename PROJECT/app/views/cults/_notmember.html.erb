@@ -1,0 +1,14 @@
+<% if @user %>
+    <%= form_with model: Oath.new do |f| %>
+    <%= f.hidden_field :cult_id, value: @cult.id %>
+    <%= f.hidden_field :member_id, value: @user.id %>
+    <%= f.submit "Join Cult"%>
+    <% end %>
+<% end %>
+
+  <h4><strong><em>This Cult has buildings in these cities:</em></strong></h4>
+  <ul>
+  <% @cult.locations.each do |location| %>
+    <li> <%= link_to location.name, location %> </li>
+  <% end %>
+  </ul>

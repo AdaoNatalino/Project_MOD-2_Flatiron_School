@@ -1,0 +1,26 @@
+<h4>Buildings</h4>
+<ul>
+<% @cult.buildings.each do |building| %>
+  <li>
+  <strong><em> <%=link_to building.name, building%></strong></em> - 
+  <%= link_to 'Destroy ♥', building, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+  </li>
+<% end %>
+</ul>
+
+
+
+<h4>Members</h4>
+<ul>
+<% @cult.members.each do |member| %>
+  <li> <%= link_to member.name, member %> </li>
+<% end %>
+</ul>
+
+
+<h4>Meetings</h4>
+<ul>
+<% @cult.meetings.each do |meeting| %>
+  <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
+<% end %>
+</ul>
