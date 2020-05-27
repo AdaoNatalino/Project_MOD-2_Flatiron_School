@@ -1,15 +1,3 @@
-
-<% if @user.shares_cult(@member) == false%>
-  <h3>You don't share any cults with this member</h3>
-<% elsif @member == @user %>
-  <%= render partial: "self" %>
-<% else %>
-  <%= render partial: "friend" %>
-<% end %>
-
-
-<!--
-
 <h1><%= @member.name %></h1>
 <h3><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h3>
 
@@ -38,9 +26,3 @@
 <% if @user == @member %>
   <%= link_to "Join a Cult", new_oath_path %>  
 <% end %>
-
-
--->
-
-
-

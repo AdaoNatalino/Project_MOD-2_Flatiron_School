@@ -7,7 +7,6 @@
 <%end%>
 
 
-
 <!--
 <%= link_to  "Edit", edit_cult_path(@cult.id) %>
 <%= button_to 'Delete Cult ♥', @cult, method: :delete, data: { confirm: 'Are you sure?' } %><br>
@@ -23,18 +22,12 @@
 <% end %>
 </ul>
 
-
-
 <h4>Members</h4>
 <ul>
 <% @cult.members.each do |member| %>
   <li> <%= link_to member.name, member %> </li>
 <% end %>
 </ul>
-
-
-
-
 
 <h4>Meetings</h4>
 <ul>

@@ -1,3 +1,19 @@
+<h3><%= "Membership level: #{@membership_level}" %></h3>
+<%= link_to "Donate", donate_path(@oath), data: {confirm: "Are you sure you wanna donate $1000?"} %>
+
+<h4>Members</h4>  
+<ul>
+<% @cult.oaths.each do |oath| %>
+  <li> 
+    <%= link_to oath.member.name, oath.member %>
+    <% if @membership_level > oath.membership_level %>
+    <%= "Rank: #{oath.membership_level}"%>
+    <%= button_to 'Kick', oath, method: :delete, data: { confirm: "Are you sure you want to kick #{oath.member.name} from the cult?" } %>      
+    <% end %>
+   </li>
+<% end %>
+</ul>
+
 <h4>Buildings</h4>
 <ul>
 <% @cult.buildings.each do |building| %>
@@ -8,19 +24,12 @@
 <% end %>
 </ul>
 
-
-
-<h4>Members</h4>
-<ul>
-<% @cult.members.each do |member| %>
-  <li> <%= link_to member.name, member %> </li>
-<% end %>
-</ul>
-
-
 <h4>Meetings</h4>
 <ul>
 <% @cult.meetings.each do |meeting| %>
   <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
 <% end %>
 </ul>
+
+
+<%= button_to 'Leave Cult', Oath.find_by(cult: @cult, member: @user), method: :delete, data: { confirm: 'Are you sure?' } %><br>

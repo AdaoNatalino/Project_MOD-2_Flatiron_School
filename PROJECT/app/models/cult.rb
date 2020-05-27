@@ -7,5 +7,6 @@ class Cult < ApplicationRecord
 
     validates :name, uniqueness: true
     validates :slogan, presence: true
+    validates :member, uniqueness: true
     
 end

@@ -1,13 +1,17 @@
 class OathsController < ApplicationController
 
     before_action :set_oath, only: [:show, :edit, :update, :destroy]
-
-    # def show
-    # end
     
     # def index
     #     @oaths = Oath.all
     # end
+
+    def donate
+        @oath = Oath.find(params[:id])
+        @oath.membership_level += 1
+        @oath.save
+        redirect_to @oath.cult
+    end
 
     def new
         @oath = Oath.new(member: @user)
@@ -44,10 +48,10 @@ class OathsController < ApplicationController
     #     end
     # end
 
-    # def destroy
-    #     oath.destroy(params[:id])
-    #     redirect_to oaths_path
-    #   end
+    def destroy
+        Oath.destroy(params[:id])
+        redirect_to @user
+    end
 
    
     private

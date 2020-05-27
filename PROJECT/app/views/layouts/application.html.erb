@@ -16,16 +16,19 @@
   <nav>
     <ul>
     <li><h3><%= link_to  "Cults", cults_path %></h3></li>
-    <li><h3><%= link_to  "Members", members_path %></h3></li>
+    <!--<li><h3><%= link_to  "Members", members_path %></h3></li>-->
     <li><h3><%= link_to  "Cities", locations_path %></h3></li>
+    <!-- <li><h3>
+      <% if @user %>
+        <%= "Signed in as "%><%= link_to  "#{@user.name}", @user %> - 
+        <%= link_to  "Logout", sign_out_path %>
+        <%else%>
+        <%= link_to  "Login", sign_in_path %>
+        <%= link_to  "Sign up", new_member_path %>
+    <% end %>
+    </h3></li> -->
     </ul>
-    <table>
-    <tr>
-      <td><h3><%= link_to  "Cults", cults_path %></h3></td>
-      <td><h3><%= link_to  "Members", members_path %></h3></td>
-      <td><h3><%= link_to  "Cities", locations_path %></h3></td>   
-    </tr>
-    </table>
+    </nav>
     <h3>
     <% if @user %>
         <%= "Signed in as "%>
@@ -34,11 +37,12 @@
         <%= link_to  "Logout", sign_out_path %>   
         <%else%>
         <%= link_to  "Login", sign_in_path %>
-        <%= link_to  "Sign up", sing_up_path %>
+        <%= link_to  "Sign up", new_member_path %>
     <% end %>
     </tr>
+    </h3>
 
-    </nav>
+  
 
     
     <%= yield %>

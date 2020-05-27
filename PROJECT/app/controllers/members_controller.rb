@@ -29,6 +29,10 @@ class MembersController < ApplicationController
     end
 
     def show
+        if !@user
+            flash[:errors] = ["You must be signed in to see individual member pages"]
+            redirect_to sign_in_path
+        end
     end
     
     def index
@@ -72,7 +76,7 @@ class MembersController < ApplicationController
     end
 
     def member_params
-        params.require(:member).permit(:name, :date_of_birth)
+        params.require(:member).permit(:name, :date_of_birth, :username, :password)
     end
 end
 

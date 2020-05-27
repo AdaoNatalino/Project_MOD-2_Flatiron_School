@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :members
+  resources :members, except: [:index]
   resources :buildings
   resources :locations
   resources :oaths
@@ -13,10 +13,9 @@ Rails.application.routes.draw do
   post '/get_in', to: 'members#get_in'
   get '/sign_out', to: 'members#sign_out', as: 'sign_out'
   get '/sign_up', to: 'members#sign_up', as: 'sign_up'
+  get '/oaths/:id/donate', to: 'oaths#donate', as: 'donate'
 
-  
 
-  post "/member/:id/join_cult", to: "oaths#join_cult", as: 'join_cult'
 
   #get '/', to: 'cults#start'
 end
