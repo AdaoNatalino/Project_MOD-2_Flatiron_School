@@ -1,8 +1,9 @@
 
 <h1><%= @cult.name %></h1>
 <h5><strong><%= @cult.slogan %></strong></h5>
-
+<%if @cult.picture%>
 <%= image_tag  "#{@cult.picture}", width: "700px" %>
+<%end%>
 <% if @cult.members.any?{|member| member == @user}%>
   <%= render partial: "member" %>
 <% else %>
