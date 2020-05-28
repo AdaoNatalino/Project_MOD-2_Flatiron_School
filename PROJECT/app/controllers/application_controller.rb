@@ -8,10 +8,10 @@ class ApplicationController < ActionController::Base
 end
 
 
-
 #   def kick_back
 #     if session[:user_id] == nil
 #       redirect_to '/sign-in'
 #     end
 #   end
+
 

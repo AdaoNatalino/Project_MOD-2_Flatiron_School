@@ -14,7 +14,7 @@ class MembersController < ApplicationController
                 redirect_to sign_in_path
             end
         else
-            flash[:errors] =["Unable to find user with these credentials"]
+            flash[:errors] =["Unable to find this username!"]
             redirect_to sign_in_path
         end
         #byebug

@@ -3,8 +3,11 @@ class CultsController < ApplicationController
 
     def show
         if @user
-            @oath = Oath.find_by(cult:@cult, member:@user)
+            if @oath = Oath.find_by(cult:@cult, member:@user)
             @membership_level = @oath.membership_level
+            else
+                redirect_to new_oath_path
+            end
         end
     end
     

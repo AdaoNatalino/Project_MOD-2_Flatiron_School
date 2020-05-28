@@ -1,0 +1,18 @@
+  <nav>
+    <div class="nav-wrapper red darken-4">
+        <a class="brand-logo left ">Welcome to Cultist</p>
+        <ul class="right">
+            <li><%= link_to  "Cults", cults_path %></li>
+            <!--<li><h3><%= link_to  "Members", members_path %></h3></li>-->
+            <li><%= link_to  "Cities", locations_path %></li>
+            <% if @user %>
+                <li><%= link_to  "Signed in as #{@user.name}", @user %></li>
+                <li><%= link_to  "Logout", sign_out_path %></li>
+            <%else%>
+                <li><%= link_to  "Login", sign_in_path %></li>
+                <li><%= link_to  "Sign up", new_member_path %></li>
+            <% end %>
+        </ul>
+    </div>
+    </nav>
+    

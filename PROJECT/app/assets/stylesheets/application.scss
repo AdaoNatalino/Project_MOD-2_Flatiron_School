@@ -13,32 +13,34 @@
  *= require_tree .
  *= require_self
  */
-
+ @import "materialize";
+ @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
  
-     
-   nav>ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        /* background-color: #333; */
-      }
+ 
+    
+  //  nav>ul {
+  //       list-style-type: none;
+  //       margin: 0;
+  //       padding: 0;
+  //       overflow: hidden;
+  //       /* background-color: #333; */
+  //     }
       
-    nav > ul > li {
-        float: left;
-        padding-left: 14px;
-        padding-right: 14px;
-    }
+  //   nav > ul > li {
+  //       float: left;
+  //       padding-left: 14px;
+  //       padding-right: 14px;
+  //   }
       
-    nav > ul > li a {
-        display: block;
-        /* color: white; */
-        /* text-align: center; */
-        text-decoration: none;
-      }
+  //   nav > ul > li a {
+  //       display: block;
+  //       /* color: white; */
+  //       /* text-align: center; */
+  //       text-decoration: none;
+  //     }
       
-      /* Change the link color to #111 (black) on hover */
-      nav > ul > li a:hover {
-        /* background-color: #111; */
-      }
+  //     /* Change the link color to #111 (black) on hover */
+  //     nav > ul > li a:hover {
+  //       /* background-color: #111; */
+  //     }
