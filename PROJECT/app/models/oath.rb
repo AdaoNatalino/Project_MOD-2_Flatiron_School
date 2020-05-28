@@ -2,6 +2,10 @@ class Oath < ApplicationRecord
     belongs_to :member
     belongs_to :cult
 
+    validates :member_id, uniqueness: {scope: :cult_id}
+
+
+
     # validate :unique_per_cult
     #before_save :unique_per_cult
 

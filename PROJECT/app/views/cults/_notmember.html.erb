@@ -10,5 +10,6 @@
   <ul>
   <% @cult.locations.each do |location| %>
     <li> <%= link_to location.name, location %> </li>
+    <%= image_tag  "#{location.picture}", width: "200px" %>
   <% end %>
   </ul>

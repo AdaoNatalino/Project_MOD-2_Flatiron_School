@@ -1,0 +1,21 @@
+<h3>Found a new building</h3>
+
+<% if @building.errors.any? %>
+  <h2><%= pluralize(@building.errors.full_messages.length , "error") %> prohibited this building from being created:</h2>
+  <ul>
+    <% @building.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @building do |f| %>
+<%= f.label :name%>
+<%= f.text_field :name %>
+<%= f.label :cult %>
+<%= f.collection_select :cult_id, @user.cults, :id, :name, prompt: true %>
+<%= f.label :location %>
+<%= f.collection_select :location_id, Location.all, :id, :name, prompt: true %>
+<%= f.submit %>
+
+<% end %>

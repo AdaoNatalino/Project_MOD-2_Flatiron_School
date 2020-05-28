@@ -5,8 +5,6 @@ class CultsController < ApplicationController
         if @user
             if @oath = Oath.find_by(cult:@cult, member:@user)
             @membership_level = @oath.membership_level
-            else
-                redirect_to new_oath_path
             end
         end
     end
@@ -53,6 +51,6 @@ class CultsController < ApplicationController
     end
 
     def cult_params
-        params.require(:cult).permit(:name, :slogan, :building_name)
+        params.require(:cult).permit(:name, :slogan, :building_name, :picture)
     end
 end

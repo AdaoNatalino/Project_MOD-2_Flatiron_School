@@ -1,39 +1,11 @@
+
 <h1><%= @cult.name %></h1>
-<h3><%= @cult.slogan %></h3>
+<h6><%= @cult.slogan %></h6>
+<%= image_tag  "#{@cult.picture}", width: "700px" %>
 <% if @cult.members.any?{|member| member == @user}%>
   <%= render partial: "member" %>
 <% else %>
   <%= render partial: "notmember" %>
 <%end%>
 
-
-<!--
-<%= link_to  "Edit", edit_cult_path(@cult.id) %>
-<%= button_to 'Delete Cult ♥', @cult, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-
-<h4>Buildings</h4>
-
-<ul>
-<% @cult.buildings.each do |building| %>
-  <li>
-  <strong><em> <%=link_to building.name, building%></strong></em> <br>
-  <%= button_to 'Destroy ♥', building, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-  </li>
-<% end %>
-</ul>
-
-<h4>Members</h4>
-<ul>
-<% @cult.members.each do |member| %>
-  <li> <%= link_to member.name, member %> </li>
-<% end %>
-</ul>
-
-<h4>Meetings</h4>
-<ul>
-<% @cult.meetings.each do |meeting| %>
-  <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
-<% end %>
-</ul>
--->
 

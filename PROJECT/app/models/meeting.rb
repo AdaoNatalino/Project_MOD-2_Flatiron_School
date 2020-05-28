@@ -14,4 +14,9 @@ class Meeting < ApplicationRecord
             self.errors[:base] << "A meeting should be booked for a future date!"
         end   
     end
+
+    def member_attended(member)
+        self.members.any?{|mem| mem == member}
+    end
+
 end

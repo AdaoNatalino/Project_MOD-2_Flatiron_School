@@ -26,48 +26,53 @@ Cult.create(
 ]
 )
 
-Location.create(
-    [{
+puts "CUlts Created"
+
+Location.create([
+    {
         name: "London",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Flondonist.com%2Flondon%2Ftransport%2Ftfl-bus-hopper-fare-70-minutes&psig=AOvVaw2uMydDiEMAemEZyxW3_bFX&ust=1590747813231000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLj74tSr1ukCFQAAAAAdAAAAABAD"
+        picture: "https://assets.londonist.com/uploads/2019/10/i875/bus_london.jpg"
     },
     {
         name: "New York",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thecrazytourist.com%2F15-best-statue-of-liberty-tours%2F&psig=AOvVaw1ToT93Y6dY9Hhm7IWE7ppL&ust=1590747937628000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCe7YCs1ukCFQAAAAAdAAAAABAD"
+        picture: "https://cdn.thecrazytourist.com/wp-content/uploads/2019/01/ccimage-shutterstock_378601342.jpg"
     },
     {
         name: "Rio de Janeiro",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.silversea.com%2Fcruise-to%2Frio-de-janeiro.html&psig=AOvVaw2-xF5V2pcyQ6GOvlBVqmgk&ust=1590748041522000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPj257us1ukCFQAAAAAdAAAAABAD"
+        picture: "https://silversea-h.assetsadobe2.com/is/image/content/dam/silversea-com/ports/r/rio-de-janeiro/silversea-south-america-cruises-rio-de-janeiro-brazil.jpg?hei=390&wid=930&fit=crop"
     },
     {
-        name: "San Franciso",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.independent.co.uk%2Ftravel%2Fhotels%2Fsan-francisco-best-hotels-value-views-budget-luxury-deals-a9107406.html&psig=AOvVaw1jFZ7ECbznauo-Y29jkWAH&ust=1590748285455000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiGic-t1ukCFQAAAAAdAAAAABAE"
+        name: "San Francisco",
+        picture: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/09/16/15/san-francisco.jpg?w968h681"
     },
     {
         name: "Amsterdam",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.telegraph.co.uk%2Ftravel%2Fdestinations%2Feurope%2Fnetherlands%2Famsterdam%2Farticles%2Fthings-you-probably-didnt-know-about-amsterdam%2F&psig=AOvVaw2YKHqJNwgeU2YfRlovYRBm&ust=1590748411699000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDnk-it1ukCFQAAAAAdAAAAABAD"
+        picture: "https://www.holland.com/upload_mm/d/0/7/69550_fullimage_fietsen-amsterdam_1360x.jpg"
     },
     {
         name: "Paris",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fodors.com%2Fworld%2Feurope%2Ffrance%2Fparis%2Fexperiences%2Fnews%2Fphotos%2F20-ultimate-things-to-do-in-paris&psig=AOvVaw2utKqO0uBbsq65IeyXwG51&ust=1590748449645000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODqj52u1ukCFQAAAAAdAAAAABAD"
+        picture: "https://www.jetsetter.com/uploads/sites/7/2019/04/GettyImages-924894324-1380x690.jpg"
+    },
     {
-        name: "Xangai",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.startse.com%2Fnoticia%2Fecossistema%2Fxangai-hub-mundial-fintechs&psig=AOvVaw3DG7I7nMVIgO7FqVMlC7Fy&ust=1590748589742000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPD_xbuu1ukCFQAAAAAdAAAAABAD"
+        name: "Shanghai",
+        picture: "https://startse-wordpress.s3.us-east-2.amazonaws.com/2020/01/xangai.jpg"
     },
     {
         name: "Berlin",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ef.com%2Fwwen%2Fpg%2Fgermany%2Fberlin%2F&psig=AOvVaw2XTFjF_O4nrDaqe01MTiX0&ust=1590748640804000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKil8OOu1ukCFQAAAAAdAAAAABAD"
+        picture: "https://www.visitberlin.de/system/files/styles/visitberlin_teaser_block_landscape_visitberlin_mobile_1x/private/image/iStock_000074120341_Doubleuncoated_DL_PPT_1.jpg?h=a66ba266&itok=ffbLnC30"
     },
     {
         name: "Bangkok",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.agoda.com%2Fen-gb%2Fcity%2Fbangkok-th.html&psig=AOvVaw1ehtXilqVWCPeOJs6FT6vT&ust=1590748777959000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOi_3Zev1ukCFQAAAAAdAAAAABAD"
+        picture: "https://a.cdn-hotels.com/gdcs/production172/d459/3af9262b-3d8b-40c6-b61d-e37ae1aa90aa.jpg"
     },
     {
         name: "Abu Dhabi",
-        picture: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fenglish.alarabiya.net%2Fen%2Fcoronavirus%2F2020%2F05%2F24%2FCoronavirus-Abu-Dhabi-issues-rules-for-hotels-beaches-bars-to-reopen-&psig=AOvVaw2k21UmO59RA3V8mELS_x0t&ust=1590748888627000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKC0rMev1ukCFQAAAAAdAAAAABAD"
+        picture: "https://vid.alarabiya.net/images/2020/05/24/068bdeb6-3511-4cc4-b69d-94ceefb7d897/068bdeb6-3511-4cc4-b69d-94ceefb7d897_16x9_600x338.png"
     }
-]
+    ]
 )
+
+puts "Created Locations"
 
 # 10.times do 
 #     Location.create(
@@ -93,6 +98,7 @@ Member.create(
 
 ]
 )
+puts "Created Us"
 
 
 30.times do
@@ -107,6 +113,19 @@ Member.create(
     )
 end
 
+puts "Created members"
+
+#cults pictures: 
+# Protoss:  https://www.pcgamesn.com/wp-content/uploads/legacy/Legacy_of_the_Void.jpg
+# Craft Beer: https://www.lacerveteca.com/wp-content/uploads/2018/11/Craft_Beer-2000x1125.jpg
+# Cult of Khorne: https://1d4chan.org/images/thumb/1/1a/Cultist_of_tzeentch_by_ilacha-d7hytyz.jpg/450px-Cultist_of_tzeentch_by_ilacha-d7hytyz.jpg
+# Tomb Kings: https://steamcdn-a.akamaihd.net/steam/apps/617870/ss_a8fc43680cb2f2cf2624a1adb740fe057a7a9461.1920x1080.jpg?t=1571755476
+# Dwarfs: https://pluspng.com/img-png/7-dwarfs-png-kingdom-hearts-dwarfs-png-1600-667-quotes-posts-pinterest-dwarf-snow-white-and-snow-1600.png
+# Kislev: https://vignette.wikia.nocookie.net/warhammerfb/images/f/ff/Warhammer_Kislev_Winged_Lancers.png/revision/latest?cb=20180825093027
+# Lizardmen: https://img00.deviantart.net/7ed9/i/2010/114/e/b/temple_guard_by_daarken.jpg
+# Dark Elves: https://lh3.googleusercontent.com/proxy/gqN5tEAur_-QUTuumAIo-uTfOuCaXvFI6p8CCUF3FQGGd5ObiE7paWXz4Y75T8q-iU_RSjomn_jeebSqSn2w6zFAn_iGLhPMdiF715l2lLg2or8rG3Oc3tfVB8hIdzicQPmrmNy7xUTjzfCcbsroew0CbkZUNcJiTSy_XptZfozu38e6SfnsjnneVw
+# Ogre Kingdoms: https://cdna.artstation.com/p/assets/images/images/006/096/418/large/michael-tenebrae-ogre-kingdoms-2-smaller.jpg?1496043875
+# Chaos Dwarfs: https://vignette.wikia.nocookie.net/warhammerfb/images/4/46/Hellcancrew_gdesign_01.jpg/revision/latest?cb=20190530033148
 
 
 
@@ -119,6 +138,7 @@ end
     )
 end
 
+puts "Cults created"
 
 50.times do 
     loc = Location.all.sample
@@ -130,9 +150,9 @@ end
     )
 end
 
+puts "Created buildings"
 
-
-10.times do 
+20.times do 
     member = Member.all.sample
     cult = Cult.all.sample
     Oath.create(
@@ -141,6 +161,8 @@ end
     )
 
 end
+
+puts "created Oaths"
 
 50.times do 
     building = Building.all.sample
@@ -151,9 +173,13 @@ end
     
 end
 
+puts "Meetings created"
 
 40.times do
     cult = Cult.all.sample
+    while cult.members.any? == false do
+        cult = Cult.all.sample
+    end
     meeting = cult.meetings.sample
     member = cult.members.sample
 
@@ -162,5 +188,7 @@ end
         meeting: meeting
     )
 end
+
+puts "Created Attendances"
 
 puts "Seed Complete"

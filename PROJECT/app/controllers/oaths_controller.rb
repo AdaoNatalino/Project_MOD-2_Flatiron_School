@@ -23,6 +23,7 @@ class OathsController < ApplicationController
         @oath.member = @user
         if @oath.valid?
             @oath.save
+            # flash[:erros] = []
             redirect_to @oath.cult
         else
             render :new

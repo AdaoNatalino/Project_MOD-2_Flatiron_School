@@ -1,13 +1,18 @@
 <h1>All Cults</h1>
-
 <div>
-<ul>
+<table>
 <% @cults.each do |cult| %>
-
-<li>
-    <%= link_to "#{cult.name}", cult%>
-</li>
-
+<tr>
+    <td style = width:500px>
+        <%if cult.picture%>
+        <%= image_tag  "#{cult.picture}", width: "100%" %>
+        <%end%>
+    </td>
+    <td>
+    <h4><%= link_to "#{cult.name}", cult%></h4>
+    
+    </td>
+</tr>
 <% end %>
-</ul>
+</table>
 </div>

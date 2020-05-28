@@ -1,8 +1,8 @@
 <h3>You share cult(s) with</h3>
-<h1><%= @member.name %></h1>
-<h3><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h3>
+<h2><%= @member.name %></h2>
+<h6><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h6>
 
-<h3>Member of:</h3>
+<h5>Member of:</h5>
     <ul>
       <% @member.oaths.each do |oath| %>
         <li><%= link_to  oath.cult.name, oath.cult %></li>

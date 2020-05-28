@@ -1,35 +1,109 @@
-<h3><%= "Membership level: #{@membership_level}" %></h3>
-<%= link_to "Donate", donate_path(@oath), data: {confirm: "Are you sure you wanna donate $1000?"} %>
+<h3><%= "Membership level: #{@membership_level}" %><%= link_to "Donate", donate_path(@oath), data: {confirm: "Are you sure you wanna donate $1000?"},  class:"right"%></h3>
 
-<h4>Members</h4>  
-<ul>
-<% @cult.oaths.each do |oath| %>
-  <li> 
-    <%= link_to oath.member.name, oath.member %>
-    <% if @membership_level > oath.membership_level %>
-    <%= "Rank: #{oath.membership_level}"%>
-    <%= button_to 'Kick', oath, method: :delete, data: { confirm: "Are you sure you want to kick #{oath.member.name} from the cult?" } %>      
+
+<table class="responsive-table">
+  <thead>
+    <th><h4 class="left">Members</h4></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @cult.sorted_oaths.each do |oath| %>
+      <tr>
+        <td><%= link_to oath.member.name, oath.member %></td>        
+        <td><%= "Rank: #{oath.membership_level}"%></td>
+        <td>
+          <% if @membership_level > oath.membership_level %>        
+            <%= button_to 'Kick', oath, method: :delete, data: { confirm: "Are you sure you want to kick #{oath.member.name} from the cult?" } %>
+          <% end %>        
+        </td>
+      </tr>
     <% end %>
-   </li>
-<% end %>
-</ul>
+    </tbody>
+  </table>
 
-<h4>Buildings</h4>
-<ul>
-<% @cult.buildings.each do |building| %>
-  <li>
-  <strong><em> <%=link_to building.name, building%></strong></em> - 
-  <%= link_to 'Destroy ♥', building, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-  </li>
-<% end %>
-</ul>
+
+  <table>
+  <thead>
+    <th><h4>Buildings</h4></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% if @cult.buildings.none? %>
+      <tr>
+        <td>None</td>
+        <td></td>
+        <td></td>
+        </tr>
+    <% else %>
+      <% @cult.buildings.each do |building| %>
+        <tr>
+          <td><%=building.name%></td>
+          <td><%=building.location.name%></td>          
+          <td>
+            <% if @membership_level > 3 %>        
+              <%= button_to 'Destroy Building', building, method: :delete, data: { confirm: "Are you sure you want to destroy #{building.name}?" } %>
+            <% end %>        
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    <% if @membership_level > 3 %>
+    <tr>
+      <td>
+                
+            <%= button_to "Found a new building", new_building_path, method: :get %>
+        
+      </td>
+      <td></td></td>
+      <% end %>
+    </tr>
+    
+    </tbody>
+  </table>
 
 <h4>Meetings</h4>
-<ul>
-<% @cult.meetings.each do |meeting| %>
-  <li> <%= link_to "#{meeting.building.name}, on: #{meeting.date}", meeting%> </li>
-<% end %>
-</ul>
+<table>
+  <thead>
+    <th>Location</th>
+    <th>Date</th>
+    <th>Attended?</th>
+  </thead>
+  <tbody>
+    <% if @cult.meetings.none? %>
+      <tr>
+        <td>None</td>
+        <td></td>
+        <td></td>
+        </tr>
+    <% else %>
+      <% @cult.meetings.each do |meeting| %>
+        <tr>
+          <td><%= meeting.location.name%></td>
+          <td><%= meeting.date%></td>          
+          <td>
+            <% if meeting.member_attended(@user) %>
+              ✓
+            <% else %>
+              <%= form_with model: Attendance.new do |f| %>
+                <%= f.hidden_field :meeting_id, value: meeting.id %>
+                <%= f.hidden_field :member_id, value: @user.id %>
+                <%= f.submit "Mark attendance"%>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>   
+    </tbody>
+  </table>
+
+  <br>
+  <br>
 
 
-<%= button_to 'Leave Cult', Oath.find_by(cult: @cult, member: @user), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+
+
+
+<%= button_to 'Leave Cult', Oath.find_by(cult: @cult, member: @user), method: :delete, data: { confirm: 'Are you sure?' }, class:"Big" %><br>

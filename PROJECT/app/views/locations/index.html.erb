@@ -1,6 +1,14 @@
 <h1>Cities</h1>
-<ul>
+<div>
+<table>
 <% @locations.each do |location| %>
-  <li><%= link_to location.name, location %></li>
+<tr>
+  <td><h4><%= link_to location.name, location %></h4></td>
+  <td>
+  <%= image_tag  "#{location.picture}", width: "600px" %>
+  </td>
+</tr>
 <% end %>
-</ul>
+</table>
+</div>
+

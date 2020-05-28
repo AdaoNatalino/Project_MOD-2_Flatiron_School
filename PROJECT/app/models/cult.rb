@@ -6,7 +6,12 @@ class Cult < ApplicationRecord
     has_many :meetings, through: :buildings
 
     validates :name, uniqueness: true
+    validates :name, presence: true
     validates :slogan, presence: true
-    validates :member, uniqueness: true
+    # validates :member, uniqueness: true
+
+    def sorted_oaths
+        self.oaths.sort_by{|oath| oath.membership_level}.reverse
+    end
     
 end

@@ -1,4 +1,5 @@
-<h1>Sign In</h1>
+<h2>Please Login!</h2>
+<%= image_tag  "https://skitguys.com/media/images/video/Dark_Textures_Welcome_Still_Shift-HD.jpg", width: "600px" %>
 
 <% if flash[:errors] %>
 <ul>
@@ -9,9 +10,9 @@
 <% end %>
 
 <%# <% form_for :thing, :url => {:action => "get_in"} do |f| %> 
-
+<div style="width: 300px">
 <%= form_with model: Member.new, url: {action: "get_in"} do |f| %>
-  <%= f.label :username %>
+  <%= f.label :username%>
   <%= f.text_field :username %><br>
 
   <%= f.label :password %>
@@ -19,3 +20,4 @@
 
   <%= f.submit "Sign-in!"%>
 <% end %>
+</div>
