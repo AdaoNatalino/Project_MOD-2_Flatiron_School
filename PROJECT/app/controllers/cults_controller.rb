@@ -21,6 +21,7 @@ class CultsController < ApplicationController
         @cult = Cult.create(cult_params)
         #byebug
         if @cult.valid?
+            Oath.create(cult: @cult, member: @user, membership_level: 10)
           redirect_to @cult
         else
           render :new

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PROJECT</title>
+    <title>Cultist</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,11 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render partial: "layouts/navbar" %>
-
-    <div class="container" style="min-height: 600px;">
-      <%= yield %>
-    </div> 
+    <div class = "grey darken-3 white-text">
+    <%= render partial: "layouts/navbar" %>    
+      <div class="container" style="min-height: 600px;">
+        <%= yield %>
+      </div> 
+    </div>
     <%= render partial: "layouts/footer"%>
   </body>
 </html>

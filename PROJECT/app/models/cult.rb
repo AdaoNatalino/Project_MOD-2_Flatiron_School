@@ -13,5 +13,11 @@ class Cult < ApplicationRecord
     def sorted_oaths
         self.oaths.sort_by{|oath| oath.membership_level}.reverse
     end
+
+    def member_count
+        count = self.members.length
+        members = count == 1 ? "member" : "members"
+        "#{count} #{members}"
+    end
     
 end

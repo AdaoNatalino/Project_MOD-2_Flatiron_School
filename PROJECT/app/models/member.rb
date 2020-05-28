@@ -40,5 +40,17 @@ class Member < ApplicationRecord
         result
     end
 
+    def shared_cult_count(member)
+        result = 0
+        for selfcult in self.cults
+            if member.cults.any?{|cult| cult == selfcult}
+                result += 1
+            end
+        end
+        result
+    end
+        
+
+    
 
 end

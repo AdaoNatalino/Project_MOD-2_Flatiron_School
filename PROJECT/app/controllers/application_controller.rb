@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     def define_user
         @user = Member.find_by(id: session[:user_id])
     end
+
+   
 end
 
 

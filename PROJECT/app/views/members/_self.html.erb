@@ -12,7 +12,7 @@
     <h5>You attended these meetings:</h5>
     <ul>
       <% @member.attendances.each do |attendance| %>
-        <li><%= link_to attendance.meeting.date, attendance.meeting%> Cult: <%= link_to  attendance.meeting.cult.name, attendance.meeting.cult %> 
+        <li><%= attendance.meeting.date %> Cult: <%= link_to  attendance.meeting.cult.name, attendance.meeting.cult %> 
       <% end %>
     </ul>
   <%else%>

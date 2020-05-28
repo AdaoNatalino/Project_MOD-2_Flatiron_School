@@ -1,10 +1,10 @@
-<h3>You share cult(s) with</h3>
-<h2><%= @member.name %></h2>
+<h2><%=  "#{@member.name}" %></h2>
 <h6><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h6>
+<h4><%= "You share #{pluralize(@member.shared_cult_count(@user) , "cult")} "%></h4>
 
 <h5>Member of:</h5>
-    <ul>
-      <% @member.oaths.each do |oath| %>
-        <li><%= link_to  oath.cult.name, oath.cult %></li>
+    <table class="highlight">
+      <% @member.cults.each do |cult| %>
+        <tr><td><%= link_to cult.name, cult %></tr></td>
       <% end %>
-    </ul>
+    </table>

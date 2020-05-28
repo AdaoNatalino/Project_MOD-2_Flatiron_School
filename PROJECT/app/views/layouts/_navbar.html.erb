@@ -1,9 +1,11 @@
 <nav>
     <div class="nav-wrapper red darken-4">
-        <a class="brand-logo left">Welcome to Cultist</a>
+        <a class="brand-logo left" href="/" style="padding-left:15px">Welcome to Cultist</a>
         <ul class="right">
+            <% if @user %>
+                <li><%= link_to  "Start a cult", new_cult_path %></li>              
+            <% end %>
             <li><%= link_to  "Cults", cults_path %></li>
-            <!--<li><h3><%= link_to  "Members", members_path %></h3></li>-->
             <li><%= link_to  "Cities", locations_path %></li>
             <% if @user %>
                 <li><%= link_to  "Signed in as #{@user.name}", @user %></li>

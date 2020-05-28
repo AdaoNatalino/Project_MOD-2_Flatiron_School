@@ -1,10 +1,13 @@
 <h1><%= @location.name %></h1>
+<%= image_tag  "#{@location.picture}", width: "600px" %>
 
-<h4>This City has this Cults: </h4>
-<ul>
-<% @location.cults.each do |cult| %>
-  <li><%= link_to  cult.name, cult %></li>
-<% end %>
-</ul>
+
+<h4>This City has these Cults: </h4>
+
+<table class="highlight">
+  <% @location.cults.each do |cult| %>
+    <tr><td><%= link_to  cult.name, cult %></td></tr>
+  <% end %>
+</table>
 
 

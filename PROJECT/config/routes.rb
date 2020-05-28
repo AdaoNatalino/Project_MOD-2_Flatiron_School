@@ -15,7 +15,5 @@ Rails.application.routes.draw do
   get '/sign_up', to: 'members#sign_up', as: 'sign_up'
   get '/oaths/:id/donate', to: 'oaths#donate', as: 'donate'
 
-
-
-  #get '/', to: 'cults#start'
+  get '/', to: 'root#welcome', as: 'welcome'
 end

@@ -1,7 +1,7 @@
 <h3><%= "Membership level: #{@membership_level}" %><%= link_to "Donate", donate_path(@oath), data: {confirm: "Are you sure you wanna donate $1000?"},  class:"right"%></h3>
 
 
-<table class="responsive-table">
+<table class="highlight">
   <thead>
     <th><h4 class="left">Members</h4></th>
     <th></th>
@@ -22,10 +22,9 @@
     </tbody>
   </table>
 
-
-  <table>
+  <table class="highlight">
   <thead>
-    <th><h4>Buildings</h4></th>
+    <th><h4><%= @cult.building_name.pluralize %></h4></th>
     <th></th>
     <th></th>
   </thead>
@@ -56,7 +55,8 @@
             <%= button_to "Found a new building", new_building_path, method: :get %>
         
       </td>
-      <td></td></td>
+      <td></td>
+      <td></td>
       <% end %>
     </tr>
     
@@ -64,7 +64,7 @@
   </table>
 
 <h4>Meetings</h4>
-<table>
+<table class="highlight">
   <thead>
     <th>Location</th>
     <th>Date</th>

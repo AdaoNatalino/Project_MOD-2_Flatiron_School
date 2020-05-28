@@ -8,16 +8,16 @@
 <% end %>
 
 <%= form_for(@cult) do |f| %>
-  <%= f.label :name: %>
+  <%= f.label :name %>
   <%= f.text_field :name %><br>
 
-  <%= f.label :slogan: %>
+  <%= f.label :slogan %>
   <%= f.text_field :slogan %><br>
 
-  <%= f.label :building_name: %>
+  <%= f.label :building_name, "Generic Building name" %>
   <%= f.text_field :building_name %><br>
 
-  <%= f.label :picture_URL: %>
+  <%= f.label :picture_URL %>
   <%= f.text_field :picture %><br>
 
   <%= f.submit %>

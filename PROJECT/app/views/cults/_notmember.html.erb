@@ -5,7 +5,8 @@
     <%= f.submit "Join Cult"%>
     <% end %>
 <% end %>
-
+  <br>
+  <% if @cult.locations.any? %>
   <h4><strong><em>This Cult has buildings in these cities:</em></strong></h4>
   <ul>
   <% @cult.locations.each do |location| %>
@@ -13,3 +14,5 @@
     <%= image_tag  "#{location.picture}", width: "200px" %>
   <% end %>
   </ul>
+  <% end %>
+  <br>
