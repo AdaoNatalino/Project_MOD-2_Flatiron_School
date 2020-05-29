@@ -1,22 +1,36 @@
-<h2><%= @member.name %></h2>
-<h6><%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%></h6>
+<%if @member.picture%>
+<div class= "circle right"><%= image_tag  "#{@member.picture}", class: "circle", width: "200px"%></div>
+<%end%>
 
+<h3><%= @member.name %><br></h3>
+<%= "Date of birth: #{@member.date_of_birth}, (age #{@member.age})"%><br>
+<%= button_to  "Edit Profile", edit_member_path(@member), method: :get %>
+</table>
 <%if @member.cults.any?%>
-    <h5>Member of:</h5>
-    <ul>
+<table>
+    <th>Member of:</th>
+    <th></th>
+   
       <% @member.oaths.each do |oath| %>
       <%if oath.cult.name%>
-        <li><%= link_to oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
-        <%end%>
-      <% end %>
-    </ul>
+        <tr>
+          <td><%= link_to oath.cult.name, oath.cult %></td>
+          <td> <%= "- Membership level: #{oath.membership_level}"%><td>
+        </tr>
+      <%end%>
+    <% end %>
+  </table>
   <%if @member.meetings.any? %>
-    <h5>You attended these meetings:</h5>
-    <ul>
-      <% @member.attendances.each do |attendance| %>
-        <li><%= attendance.meeting.date %> Cult: <%= link_to  attendance.meeting.cult.name, attendance.meeting.cult %> 
+  <table>
+    <th>You attended these meetings:</th>
+      <tr>
+        <% @member.attendances.each do |attendance| %>
+        <td><%= attendance.meeting.date %></td> 
+        <td>Cult: <%= link_to  attendance.meeting.cult.name, attendance.meeting.cult %><td> 
+      </tr>
       <% end %>
-    </ul>
+  </table>    
+   
   <%else%>
     <h5>You haven't attended any meetings.</h5>
   <%end%>

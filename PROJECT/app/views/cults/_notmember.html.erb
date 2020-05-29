@@ -7,24 +7,19 @@
 <% end %>
   <br>
   <% if @cult.locations.any? %>
-  <h4><strong><em>This Cult has buildings in these cities:</em></strong></h4>
-  <ul>
+  <h4><strong><em>This Cult has infiltrated these cities:</em></strong></h4>
+  <div class="row">
   <% @cult.locations.each do |location| %>
-    <li> <%= link_to location.name, location %> </li>
-    <%= image_tag  "#{location.picture}", width: "200px" %>
-  <% end %>
-  </ul>
-  <% end %>
-  <br>
-
-  <% if @cult.locations.any? %>
-  <h4><strong><em>This Cult has buildings in these cities:</em></strong></h4>
-  <div>
-  <% @cult.locations.each do |location| %>
-    <div class="left">
-      <%= link_to location.name, location %> 
-      <%= image_tag  "#{location.picture}", width: "200px" %>
-    </div>
+      <div class ="col s4" style="height: 330px">
+        <div class="card">
+          <div class="card-image">
+          <%= image_tag  "#{location.picture}" %>
+          </div>
+          <div class="card-action">
+          <%= link_to location.name, location %>
+          </div>
+        </div>
+      </div>
   <% end %>
   </div>
   <% end %>

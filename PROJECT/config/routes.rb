@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :oaths, only: [:new, :create, :destroy]
   resources :attendances, only: [:create]
   resources :cults
-  #resources :meetings
+  resources :meetings, only:[:create]
   
   get '/sign_in', to: 'members#sign_in', as: 'sign_in'
   post '/get_in', to: 'members#get_in'

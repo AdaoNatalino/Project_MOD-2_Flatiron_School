@@ -100,10 +100,10 @@
   </table>
 
   <br>
+
+  <%= render partial: "book_meeting" %>
   <br>
-
-
-
-
-
+<%if @membership_level > 5%>
+  <%= button_to  "Edit Cult", edit_cult_path(@cult), method: :get %><br>
+<%end%>
 <%= button_to 'Leave Cult', Oath.find_by(cult: @cult, member: @user), method: :delete, data: { confirm: 'Are you sure?' }, class:"Big" %><br>

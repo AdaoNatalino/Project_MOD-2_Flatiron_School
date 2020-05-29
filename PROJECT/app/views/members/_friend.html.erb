@@ -3,8 +3,15 @@
 <h4><%= "You share #{pluralize(@member.shared_cult_count(@user) , "cult")} "%></h4>
 
 <h5>Member of:</h5>
-    <table class="highlight">
+    <table>
+    <tr>
+    <th></th>
+    <th></th>
+    </tr>
       <% @member.cults.each do |cult| %>
-        <tr><td><%= link_to cult.name, cult %></tr></td>
+        <tr>
+          <td><%= link_to cult.name, cult %></td>
+          <td><%= @user.is_member(cult)? "Shared" : ""%></td>
+        </tr>
       <% end %>
     </table>

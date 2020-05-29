@@ -2,6 +2,7 @@ class CultsController < ApplicationController
     before_action :set_cult, only: [:show, :edit, :update]
 
     def show
+        @meeting ||= Meeting.new
         if @user
             if @oath = Oath.find_by(cult:@cult, member:@user)
             @membership_level = @oath.membership_level

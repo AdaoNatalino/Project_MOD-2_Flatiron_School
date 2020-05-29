@@ -16,9 +16,10 @@ class MeetingsController < ApplicationController
     def create
         @meeting = Meeting.create(meeting_params)
         if @meeting.valid?
-          redirect_to @meeting
+          redirect_to @meeting.cult
         else
-          render :new
+          flash[:errors] = @meeting.errors.full_messages
+          redirect_to @meeting.cult
         end
     end
 

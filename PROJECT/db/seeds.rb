@@ -149,13 +149,15 @@ Member.create(
         name: "Jamie Symonds-Tayler",
         date_of_birth: Date.parse("1990-06-18"),
         username: "jamie",
-        password: "jamie"
+        password: "jamie",
+        picture: " "
     },
     {
         name: "Adao Natalino",
         date_of_birth: Date.parse("1989-08-06"),
         username: "adao",
-        password: "adao"
+        password: "adao",
+        picture: "https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/62407578_2335555256526311_6539892804074602496_n.jpg?_nc_cat=110&_nc_sid=09cbfe&_nc_ohc=JK3auNRcE5kAX8WD0-P&_nc_ht=scontent-lhr8-1.xx&oh=880c027bfea94a5f7c475f32af21cbea&oe=5EF84284"
     },
 
 ]
@@ -170,7 +172,8 @@ puts "Created Us"
             name: name,
             date_of_birth: Date.today-3650-rand(10000),
             username: name.split[0],
-            password: name.split[0]
+            password: name.split[0],
+            picture: " "
         }
     )
 end

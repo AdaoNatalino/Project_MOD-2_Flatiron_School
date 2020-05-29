@@ -30,15 +30,15 @@ class Member < ApplicationRecord
         avg = (memberships.sum/memberships.length.to_f).round(2)
     end
 
-    # def shares_cult(member)
-    #     result = false
-    #     for selfcult in self.cults
-    #         if member.cults.any?{|cult| cult == selfcult}
-    #             result = true
-    #         end
-    #     end
-    #     result
-    # end
+    def shares_cult(member)
+        result = false
+        for selfcult in self.cults
+            if member.cults.any?{|cult| cult == selfcult}
+                result = true
+            end
+        end
+        result
+    end
 
     def shared_cult_count(member)
         result = 0
@@ -50,6 +50,9 @@ class Member < ApplicationRecord
         result
     end
         
+    def is_member(cult)
+        self.cults.any?{|c| c == cult}
+    end
 
     
 

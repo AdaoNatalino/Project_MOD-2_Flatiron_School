@@ -1,6 +1,6 @@
 <% if @member == @user %>
   <%= render partial: "self" %>
-<% elsif @user.shares_cult_count(@member) > 0 %>
+<% elsif @user.shared_cult_count(@member) > 0 %>
   <%= render partial: "friend" %>
 <% else %>
   <h3>You don't share any cults with this member</h3>

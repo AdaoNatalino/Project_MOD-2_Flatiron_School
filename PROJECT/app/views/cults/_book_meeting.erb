@@ -1,0 +1,19 @@
+<h4>Book a Meeting</h4>
+<% if flash[:errors] %>
+  <h4><%= pluralize(flash[:errors].length , "error") %> prohibited this Meeting from being booked:</h4>
+  <ul class = "red-text"> 
+    <% flash[:errors].each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @meeting do |f| %>
+    <%= f.hidden_field :cult_id, value: @cult.id %>
+    <%= f.label :location %>
+    <%= f.collection_select :building_id, @cult.buildings, :id, :name, prompt: true%>
+    <%- f.label :date %>
+    <%= f.date_field :date %>
+    <%= f.submit %>
+<% end %>
