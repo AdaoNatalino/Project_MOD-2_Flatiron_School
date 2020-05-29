@@ -106,4 +106,7 @@
 <%if @membership_level > 5%>
   <%= button_to  "Edit Cult", edit_cult_path(@cult), method: :get %><br>
 <%end%>
+<%if @membership_level >= 10%>
+  <%= button_to  "Delete Cult", cult_path(@cult), method: :delete, data: { confirm: 'Are you sure?'} %><br>
+<%end%>
 <%= button_to 'Leave Cult', Oath.find_by(cult: @cult, member: @user), method: :delete, data: { confirm: 'Are you sure?' }, class:"Big" %><br>
