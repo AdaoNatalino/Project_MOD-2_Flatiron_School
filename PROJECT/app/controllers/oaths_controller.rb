@@ -30,11 +30,11 @@ class OathsController < ApplicationController
         end
     end
 
-    def join_cult
-        @member = Member.find(params[:id])
-        @oath = Oath.new(member: @member)
-        render :new
-    end
+    # def join_cult
+    #     @member = Member.find(params[:id])
+    #     @oath = Oath.new(member: @member)
+    #     render :new
+    # end
 
 
     # def edit

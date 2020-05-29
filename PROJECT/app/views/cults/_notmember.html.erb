@@ -16,3 +16,16 @@
   </ul>
   <% end %>
   <br>
+
+  <% if @cult.locations.any? %>
+  <h4><strong><em>This Cult has buildings in these cities:</em></strong></h4>
+  <div>
+  <% @cult.locations.each do |location| %>
+    <div class="left">
+      <%= link_to location.name, location %> 
+      <%= image_tag  "#{location.picture}", width: "200px" %>
+    </div>
+  <% end %>
+  </div>
+  <% end %>
+  <br>

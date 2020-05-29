@@ -5,7 +5,9 @@
     <h5>Member of:</h5>
     <ul>
       <% @member.oaths.each do |oath| %>
-        <li><%= link_to  oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
+      <%if oath.cult.name%>
+        <li><%= link_to oath.cult.name, oath.cult %> <%= "- Membership level: #{oath.membership_level}"%></li>
+        <%end%>
       <% end %>
     </ul>
   <%if @member.meetings.any? %>
@@ -24,5 +26,5 @@
 <% end %>
 
 <% if @user == @member %>
-  <%= link_to "Join a Cult", new_oath_path %>  
+  <%= link_to "Join a Cult", cults_path %>  
 <% end %>
