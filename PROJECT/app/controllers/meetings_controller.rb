@@ -5,10 +5,7 @@ class MeetingsController < ApplicationController
     def show
     end
     
-    # def index
-    #     @meetings = Meeting.all
-    # end
-
+   
     def new
         @meeting = Meeting.new
     end
